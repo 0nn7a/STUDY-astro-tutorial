@@ -1,5 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogPost from '../components/BlogPost.astro';
+
+const allPosts = Object.values(
+  import.meta.glob('./posts/*.md', { eager: true }),
+);
 const pageTitle = 'My Astro Site';
 ---
 
@@ -9,10 +14,8 @@ const pageTitle = 'My Astro Site';
 
   <ul>
     {
-      [1, 2, 3].map((n) => (
-        <li>
-          <a href={`/STUDY-astro-tutorial/posts/post-${n}`}>Post {n}</a>
-        </li>
+      allPosts.map((post: any) => (
+        <BlogPost url={post.url} title={post.frontmatter.title} />
       ))
     }
   </ul>
