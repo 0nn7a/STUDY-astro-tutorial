@@ -1,9 +1,9 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  base: "STUDY-astro-tutorial",
-  outDir: "./dist",
-  output: "static",
+  base: 'STUDY-astro-tutorial',
+  outDir: './dist',
+  output: 'static',
 });
